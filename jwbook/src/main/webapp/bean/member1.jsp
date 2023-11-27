@@ -7,8 +7,8 @@
 <title>MemberBean 사용</title>
 </head>
 <body>
-	<jsp:useBean id="member" class="bean.MemberBean"/>
-	<p>아이디 : <%=member.getId() %></p>
-	<p>이름 : <%=member.getName() %></p>
+	<jsp:useBean id="member" class="bean.MemberBean" />
+	<p>아이디: <%=member.getId() %>
+	<p>이름: <%=member.getName() %>
 </body>
 </html>

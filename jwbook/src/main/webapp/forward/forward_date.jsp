@@ -1,16 +1,19 @@
-<%@page import="java.util.Date"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page import="java.util.Date"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>¿À´ÃÀÇ ³¯Â¥¿Í ½Ã°£</title>
+<meta charset="UTF-8">
+<title>ì˜¤ëŠ˜ì˜ ë‚ ì§œì™€ ì‹œê°„</title>
 </head>
-<body>
-	<h2>¿À´ÃÀÇ ³¯Â¥¿Í ½Ã°£</h2>
-	<% Date date = new Date(); %>
+<body>	
+	<h2>ì˜¤ëŠ˜ì˜ ë‚ ì§œì™€ ì‹œê°„</h2>
+	<%
+		Date date = new Date();
+	    out.println(date.toLocaleString());
+	%>
 	
-	<%=date %>
+	<%-- <%=date %> --%>
 </body>
 </html>

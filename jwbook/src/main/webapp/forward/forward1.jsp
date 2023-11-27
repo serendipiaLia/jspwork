@@ -1,14 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>Æ÷¿öµå ¾×¼Ç ÅÂ±×(Action Tag)</title>
+<meta charset="UTF-8">
+<title>í¬ì›Œë“œ ì•¡ì…˜ íƒœê·¸(Action Tag)</title>
 </head>
 <body>
 	<h2>Forward Action Tag</h2>
-	<!-- ÆäÀÌÁö ÀÌµ¿ °ü·Ã ÅÂ±× -->
+	<!-- í˜ì´ì§€ ì´ë™ ê´€ë ¨ íƒœê·¸ -->
 	<jsp:forward page="forward_date.jsp"></jsp:forward>
 </body>
 </html>

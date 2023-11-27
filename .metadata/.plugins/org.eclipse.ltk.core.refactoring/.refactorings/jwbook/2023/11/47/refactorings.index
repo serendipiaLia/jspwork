@@ -3,3 +3,26 @@
 1700532162743	Delete element
 1700532308493	Delete element
 1700532429256	Copy file
+1700533613116	Rename resource 'resource'
+1700536516988	Move 'loginForm.jsp' to 'response'
+1700536846315	Move 'loginProcess.jsp' to 'response'
+1700541820058	Delete element
+1700541913758	Move 'response' to 'webapp'
+1700541919335	Move 'loginSuccess.jsp' to 'response'
+1700542666559	Copy file
+1700543731626	Copy file
+1700543780677	Delete element
+1700549773935	Delete element
+1700550683896	Copy file
+1700615428516	Copy file
+1700615436450	Rename resource 'loginForm.jsp'
+1700615455282	Rename resource 'joinform.jsp'
+1700639608556	Rename package 'servlet.dispatch'
+1700722377084	Rename resource 'session1.jsp'
+1700790732298	Delete element
+1700790742748	Copy file
+1700810716179	Copy file
+1700810720165	Rename resource 'validation2.jsp'
+1700812889980	Copy file
+1700812901838	Rename resource 'regExp1.jsp'
+1700814787237	Copy file
