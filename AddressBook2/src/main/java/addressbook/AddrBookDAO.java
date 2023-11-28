@@ -179,4 +179,29 @@ public class AddrBookDAO {
 			}
 		}
 		
+		// 세션으로 사용할 이름 가져오기
+		public String getNameByEmail(String email) {
+			//db연결
+			conn = JDBCUtil.getConnection();
+			String name = ""; // 이메일이 없으면 null처리 됨 (하기 if문 실행 안됨)
+			
+			try {
+				//sql 처리 및 실행
+				String sql = "SELECT * FROM addrbook WHERE email=? ";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, email);
+				// sql 검색 실행
+				rs = pstmt.executeQuery();
+				if(rs.next()) { // 이메일이 있으면 
+					// db에서 이름(username)을 꺼내옴!
+					name = rs.getString("username");
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally { //db 종료
+				JDBCUtil.close(conn, pstmt, rs);
+			}
+			return name;
+		}
+		
 } //AddrBookDAO

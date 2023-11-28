@@ -29,7 +29,7 @@
 		<p>
 			<!-- <a href="addrForm.jsp">[주소추가]</a> &nbsp;&nbsp; -->
 			<a href="logout.jsp">
-				<span class="accent">(<%=session.getAttribute("sessionId") %> 님)</span>[로그아웃] <!-- 새로만든 주소록만 뜸 -->
+				<span class="accent">(<%=session.getAttribute("sessionName") %> 님)</span>[로그아웃]
 			</a> 
 		</p>
 		
