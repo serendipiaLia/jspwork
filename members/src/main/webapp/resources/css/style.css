@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+/* 공통 스타일 >> main.jsp */
+*{margin: 0; padding: 0;}
+#container{width: 90%; margin:30px auto;}
+ul li{list-style: none;}
+a{text-decoration: none;}
+
+/* header 스타일 >> header.jsp */
+header{height: 80px; background-color: oldlace;}
+header #logo{width: 20%; float: left; line-height: 80px;}
+#logo h1 a{color: deeppink; padding-left: 40px; font-style: italic;} /* fontstyle 바꾸기 */
+#logo h1 a:hover{color: deepskyblue;}
+header nav{width: 70%; float: right;}
+
+#topMenu{line-height: 80px;}
+#topMenu li{float: left; margin:0 20px; }
+#topMenu li a{color: deeppink; padding: 0 20px;}
+#topMenu li a:hover{color: deepskyblue}
+
+/* footer 스타일 >> footer.jsp */
+footer{height: 80px; border-top: 2px solid deeppink}
+#bMenu{margin: 10px 20px;}
+#bMenu li{float: left; margin:10px 0; padding: 0 10px; border-right: 2px solid blanchedalmond;}
+#bMenu li a{color: darkgrey;}
+#bMenu li a:hover{color: deeppink;}
+#bMenu li:last-child{border: none;}
+
+/* main 스타일 >> main.jsp */
+#main{margin:0 auto; text-align: center;}
+#main h2{color: darkgray;}
+#main .main_img{margin: 10px;}
+#main .main_img img{border-radius: 5px;}
+
+/* 회원 목록 스타일 >> memberlist.jsp */
+#memberlist{width: 700px; margin:20px auto;}
+#memberlist h2{color: darkgray;}
+#memberlist table{width: 700px; margin: 20px auto;}
+#memberlist table, th, td{border: 1px solid lightpink; border-collapse: collapse; text-align: center;}
+table, th, td{padding: 10px;}
+table thead{text-align: center; background-color: mistyrose;}
+
+/* 회원 가입 폼 스타일 >> joinform.jsp */
+#join{width: 500px; margin: 20px auto;}
+#join form{margin: 20px auto;}
+#join h2{color: darkgray;}
+#join fieldset{padding: 10px 10px 10px 75px;} /* lia */
+form ul li{margin: 20px;}
+form .button{margin-top: 16px;}
+form .button button{padding: 5px;}
+form label{width: 120px; float: left;}
+form input{padding: 5px; }
