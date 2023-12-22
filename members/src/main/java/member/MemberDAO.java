@@ -77,5 +77,104 @@ public class MemberDAO {
 		}
 	}
 	
+	// 회원 정보(상세 보기)
+	public Member getMember(String id) { 
+		
+		Member m = new Member();
+		
+		try {
+			conn = JDBCUtil.getConnection(); // sql 연결
+			
+			String sql = "SELECT * FROM member WHERE id = ?"; // sql 처리
+			
+			pstmt = conn.prepareStatement(sql); 
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				m.setMno(rs.getInt("mno"));
+				m.setId(rs.getString("id"));
+				m.setPasswd(rs.getString("passwd"));
+				m.setName(rs.getString("name"));
+				m.setEmail(rs.getString("email"));
+				m.setGender(rs.getString("gender"));
+				m.setJoindate(rs.getTimestamp("joindate"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			JDBCUtil.close(conn, pstmt, rs);
+		}
+		return m;
+	}
+
+	// 로그인 인증(객체 : member로 반환)
+		public Member checkLogin(Member m) {
+			
+			try {
+				conn = JDBCUtil.getConnection();
+				String sql = "SELECT * FROM member WHERE id = ? and passwd = ? ";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, m.getId());
+				pstmt.setString(2, m.getPasswd());
+				rs = pstmt.executeQuery();
+				if(rs.next()) {
+					//이름을 db에서 가져옴
+					rs.getString("name");
+					m.setName(rs.getString("name"));
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				JDBCUtil.close(conn, pstmt, rs);
+			}
+			return m;
+		}
+		
+	// 로그인 인증	
+/*	public boolean checkLogin(Member m) {
+//		
+//		try {
+//			conn = JDBCUtil.getConnection(); // sql 연결
+//			
+//			String sql = "SELECT * FROM member WHERE id = ? and passwd = ? ";
+//			
+//			pstmt = conn.prepareStatement(sql); // sql 처리
+//			pstmt.setString(1, m.getId());
+//			pstmt.setString(2, m.getPasswd());
+//			rs = pstmt.executeQuery();
+//			if(rs.next()) {
+//				return true;
+//			}
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		} finally {
+//			JDBCUtil.close(conn, pstmt, rs);
+//		}
+//		return false;
+//	}
+*/	
 	
-}
+	// ID중복검사
+	public boolean getDuplicatedId(String id) {
+		boolean result = false;
+		
+		try {
+			conn = JDBCUtil.getConnection();
+			
+			String sql = "SELECT DECODE (COUNT(*), 1, 'true', 'false') as result "
+					+ "FROM member WHERE id = ? ";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				// db의 AS result 별칭을 통해 데이터를 가져옴
+				result = rs.getBoolean("result");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+
+
+} //MemberDAO.java class

@@ -1,17 +1,17 @@
 @charset "UTF-8";
 
-/* 공통 스타일 >> main.jsp */
+/* 공통 스타일 >> main.jsp .. PC기준 1200px */
 *{margin: 0; padding: 0;}
-#container{width: 90%; margin:30px auto;}
+#container{width: 1200px; margin:30px auto;}
 ul li{list-style: none;}
 a{text-decoration: none;}
 
 /* header 스타일 >> header.jsp */
 header{height: 80px; background-color: oldlace;}
-header #logo{width: 20%; float: left; line-height: 80px;}
+header #logo{width: 250px; float: left; line-height: 80px;}
 #logo h1 a{color: deeppink; padding-left: 40px; font-style: italic;} /* fontstyle 바꾸기 */
 #logo h1 a:hover{color: deepskyblue;}
-header nav{width: 70%; float: right;}
+header nav{width: 850px; float: right;}
 
 #topMenu{line-height: 80px;}
 #topMenu li{float: left; margin:0 20px; }
@@ -19,7 +19,7 @@ header nav{width: 70%; float: right;}
 #topMenu li a:hover{color: deepskyblue}
 
 /* footer 스타일 >> footer.jsp */
-footer{height: 80px; border-top: 2px solid deeppink}
+footer{clear: both; height: 80px; border-top: 2px solid deeppink}
 #bMenu{margin: 10px 20px;}
 #bMenu li{float: left; margin:10px 0; padding: 0 10px; border-right: 2px solid blanchedalmond;}
 #bMenu li a{color: darkgrey;}
@@ -27,13 +27,19 @@ footer{height: 80px; border-top: 2px solid deeppink}
 #bMenu li:last-child{border: none;}
 
 /* main 스타일 >> main.jsp */
-#main{margin:0 auto; text-align: center;}
-#main h2{color: darkgray;}
-#main .main_img{margin: 10px;}
+#main{width: 1000px; height: 600px; margin:30px auto;}
+#main h1{color: darkgray; padding: 10px 40px 0 40px;}
+#main .main_img{margin: 30px 24px; float:left;}
 #main .main_img img{border-radius: 5px;}
+#main .newB{margin: 20px;}
+#main .newB h3{margin: 20px;}
+#main .newB p{line-height: 2.5;}
 
 /* 회원 목록 스타일 >> memberlist.jsp */
 #memberlist{width: 700px; margin:20px auto;}
+#memberlist .logout{text-align: right;}
+#memberlist .logout p a{color: deeppink; font-size: 0.8em;}
+#memberlist .logout p a:hover{color: deepskyblue;}
 #memberlist h2{color: darkgray;}
 #memberlist table{width: 700px; margin: 20px auto;}
 #memberlist table, th, td{border: 1px solid lightpink; border-collapse: collapse; text-align: center;}
@@ -44,9 +50,76 @@ table thead{text-align: center; background-color: mistyrose;}
 #join{width: 500px; margin: 20px auto;}
 #join form{margin: 20px auto;}
 #join h2{color: darkgray;}
-#join fieldset{padding: 10px 10px 10px 75px;} /* lia */
+#join fieldset{padding: 10px 10px 10px 40px;} /* lia */
 form ul li{margin: 20px;}
 form .button{margin-top: 16px;}
 form .button button{padding: 5px;}
 form label{width: 120px; float: left;}
 form input{padding: 5px; }
+
+/* 회원 정보 스타일 >> memberview.jsp */
+#memberview{width: 700px; margin:20px auto;}
+#memberview h2{color: darkgray;}
+#memberview table{width: 500px; margin: 20px auto;}
+#memberview table, th, td{border: 1px solid lightpink; border-collapse: collapse; text-align: center;}
+table, th, td{padding: 10px;}
+table thead{text-align: center; background-color: mistyrose;}
+
+/* login 스타일 >> loginform.jsp */
+#login {width: 400px; margin: 30px auto 100px;}
+#login h2{color: darkgray;}
+#login form{margin: 30px auto;}
+#login form ul li{margin: 30px}
+#login .error{color: deepskyblue; margin-top: 16px; font-size: 0.9em;}
+#login button{width: 100%; padding: 10px 0;}
+
+/* 게시글 목록 스타일 >> boardlist.jsp */
+#boardlist{width: 700px; margin:20px auto;}
+#boardlist .logout{text-align: right;}
+#boardlist .logout p a{color: deeppink; font-size: 0.8em;}
+#boardlist .logout p a:hover{color: deepskyblue;}
+#boardlist h2{color: darkgray;}
+#boardlist table{width: 700px; margin: 20px auto;}
+#boardlist table, th, td{border: 1px solid lightpink; border-collapse: collapse; text-align: center;}
+table, th, td{padding: 10px;}
+table thead{text-align: center; background-color: mistyrose;}
+#boardlist button{padding: 3px;}
+	/* 페이지 처리 영역.. c:foreach */
+	#boardlist .pagenavi{text-align: center;}
+	#boardlist .pagenavi{margin: 5px}
+	/* 게시글 목록의 검색창 */
+	#boardlist form{text-align: right;}
+
+/* 게시글 작성(글쓰기) >> writeform.jsp */
+#writeF{width: 650px; margin:20px auto; } 
+#writeF h2{color: darkgray;}
+#writeF table{width: 650px; margin: 20px auto;}
+#writeF table, th, td{border: 1px solid lightpink; border-collapse: collapse; text-align: center;}
+table, th, td{padding: 10px;}
+table thead{text-align: center; background-color: mistyrose;}
+#writeF input{width: 540px; height: 25px; padding: 5px;}
+#writeF textarea{width: 540px; height: 300px; padding: 5px;}
+#writeF button{padding: 3px;}
+
+/* 게시글 상세보기 (+댓글) >> boardview.jsp */
+#boardV {width: 650px; margin:20px auto; } 
+#boardV h2{color: darkgray;}
+#boardV table{width: 650px; margin: 20px auto;}
+#boardV table, th, td{border: 1px solid lightpink; border-collapse: collapse; text-align: center;}
+table, th, td{padding: 10px;}
+table thead{text-align: center; background-color: mistyrose;}
+#boardV input{width: 540px; height: 25px; padding: 5px;}
+#boardV textarea{width: 540px; height: 300px; padding: 5px;}
+#boardV button{padding: 3px;}
+	/* 댓글 */
+	#boardV h3{color: deeppink; margin:30px 0 10px 0; border-bottom: 2px dotted lightpink; border-top: 2px dotted lightpink;}
+	#boardV .reply{margin:13px 0; padding: 5px 0; border-bottom: 0.5px solid lightpink;}
+	#boardV .reply p:nth-of-type(1){white-space: pre-line; line-height: 1.3; font-size: 0.9em;} /* white-space:pre-line >> 줄바꿈 하기 */
+	#boardV .reply #pid{font-size: 0.6em; color: darkgray;}
+	#replyF textarea{height: 55px; width: 635px;}
+	/* 로그인 한 사용자만 댓글 등록 창 */
+	.replylogin{background-color: mistyrose; margin: 10px 0; padding: 8px; text-align: center; font-size: 0.8em;}
+	.replylogin a{color: deeppink;}
+	.replylogin a:hover{color:deepskyblue;} 
+	/* 로그인 한 사용자만 댓글 수정 및 삭제 */
+	.reply a{color: deeppink; font-size: 12px;}

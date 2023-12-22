@@ -9,10 +9,12 @@ import java.sql.SQLException;
 // db에 연결하고 종료하는 클래스
 public class JDBCUtil {
 	// 필드 생성 (class이름으로 접근하기 위해 static 사용)
+	// mySQL 연결 필드 생성 
 	static String drvierClass = "oracle.jdbc.OracleDriver";
 	static String url = "jdbc:oracle:thin:@localhost:1521/xe";
 	static String user = "jweb";
 	static String password = "pwjweb";
+	
 	
 	Connection conn = null;
 	PreparedStatement pstmt = null;
@@ -46,7 +48,7 @@ public class JDBCUtil {
 			}
 		}
 	}
-	// 종료 메서드 (검색(이메일,목록))
+	// 종료 메서드
 	public static void close(Connection conn, PreparedStatement pstmt, ResultSet rs) {
 		if(rs != null) {
 			try {

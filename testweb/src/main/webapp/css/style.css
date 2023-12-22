@@ -1,0 +1,8 @@
+@charset "UTF-8";
+
+#container{width: 550px; height: 220px;}
+#container ul{width: 500px; list-style: none; padding-left: 50px; }
+#container ul li{margin: 9px;}
+#container label{width: 160px; float: left;}
+#container input{width: 250px; padding: 5px;}
+#container button{padding: 5px 10px;}
